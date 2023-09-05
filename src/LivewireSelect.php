@@ -31,6 +31,8 @@ class LivewireSelect extends Component
     public $name;
     public $placeholder;
 
+    public $eventName;
+    
     public $value;
     public $optionsValues;
 
@@ -124,7 +126,7 @@ class LivewireSelect extends Component
 
     public function notifyValueChanged()
     {
-        $this->emit("{$this->name}Updated", [
+        $this->emit("{$this->eventName}Updated", [
             'name' => $this->name,
             'value' => $this->value,
         ]);
